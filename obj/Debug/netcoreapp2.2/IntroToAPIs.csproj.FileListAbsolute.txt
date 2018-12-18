@@ -1,0 +1,14 @@
+/Users/frankdiaz/sdg/unit-iii/IntroToAPIs/bin/Debug/netcoreapp2.2/IntroToAPIs.deps.json
+/Users/frankdiaz/sdg/unit-iii/IntroToAPIs/bin/Debug/netcoreapp2.2/IntroToAPIs.runtimeconfig.json
+/Users/frankdiaz/sdg/unit-iii/IntroToAPIs/bin/Debug/netcoreapp2.2/IntroToAPIs.runtimeconfig.dev.json
+/Users/frankdiaz/sdg/unit-iii/IntroToAPIs/bin/Debug/netcoreapp2.2/IntroToAPIs.dll
+/Users/frankdiaz/sdg/unit-iii/IntroToAPIs/bin/Debug/netcoreapp2.2/IntroToAPIs.pdb
+/Users/frankdiaz/sdg/unit-iii/IntroToAPIs/obj/Debug/netcoreapp2.2/IntroToAPIs.csprojAssemblyReference.cache
+/Users/frankdiaz/sdg/unit-iii/IntroToAPIs/obj/Debug/netcoreapp2.2/IntroToAPIs.csproj.CoreCompileInputs.cache
+/Users/frankdiaz/sdg/unit-iii/IntroToAPIs/obj/Debug/netcoreapp2.2/IntroToAPIs.RazorAssemblyInfo.cache
+/Users/frankdiaz/sdg/unit-iii/IntroToAPIs/obj/Debug/netcoreapp2.2/IntroToAPIs.RazorAssemblyInfo.cs
+/Users/frankdiaz/sdg/unit-iii/IntroToAPIs/obj/Debug/netcoreapp2.2/IntroToAPIs.AssemblyInfoInputs.cache
+/Users/frankdiaz/sdg/unit-iii/IntroToAPIs/obj/Debug/netcoreapp2.2/IntroToAPIs.AssemblyInfo.cs
+/Users/frankdiaz/sdg/unit-iii/IntroToAPIs/obj/Debug/netcoreapp2.2/IntroToAPIs.RazorTargetAssemblyInfo.cache
+/Users/frankdiaz/sdg/unit-iii/IntroToAPIs/obj/Debug/netcoreapp2.2/IntroToAPIs.dll
+/Users/frankdiaz/sdg/unit-iii/IntroToAPIs/obj/Debug/netcoreapp2.2/IntroToAPIs.pdb
