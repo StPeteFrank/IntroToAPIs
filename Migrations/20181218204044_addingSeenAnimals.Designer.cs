@@ -9,8 +9,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace IntroToAPIs.Migrations
 {
     [DbContext(typeof(SafariVacationContext))]
-    [Migration("20181218200703_AddSeenAnimalsTable")]
-    partial class AddSeenAnimalsTable
+    [Migration("20181218204044_addingSeenAnimals")]
+    partial class addingSeenAnimals
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
