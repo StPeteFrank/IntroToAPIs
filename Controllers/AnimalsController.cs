@@ -20,9 +20,9 @@ namespace IntroToAPIs.Controllers
       // query my database
       var db = new SafariVacationContext();
       //SELECT * FROM SeenAnimals
-      var results = db.SeenAnimals.OrderBy(seenanimals => seenanimals.Species);
+      var animals = db.SeenAnimals.OrderBy(seenanimals => seenanimals.Species);
       //return the results
-      return results.ToList();
+      return animals.ToList();
     }
     [HttpPost]
     public ActionResult<SeenAnimals> AddAnimals([FromBody] SeenAnimals incomingSeenAnimals)
@@ -33,9 +33,10 @@ namespace IntroToAPIs.Controllers
       return incomingSeenAnimals;
     }
     [HttpDelete("{id}")]
-    public ActionResult<Object> DeleteSeenAnimals(int id)
+    public ActionResult<Object> DeleteSeenAnimals([FromRoute]int id)
     {
       Console.WriteLine($"Delete the seenanimal: {id}");
+
       var db = new SafariVacationContext();
       var seenanimalsToDelete = db.SeenAnimals.FirstOrDefault(seenanimals => seenanimals.Id == id);
       if (seenanimalsToDelete != null)
