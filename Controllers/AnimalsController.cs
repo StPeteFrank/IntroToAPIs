@@ -44,18 +44,38 @@ namespace IntroToAPIs.Controllers
       db.SaveChanges();
       return incomingSeenAnimals;
     }
-    [HttpDelete("{id}")]
-    public ActionResult<Object> DeleteSeenAnimals([FromRoute]int id)
+    // [HttpDelete("{id}")]
+    // public ActionResult<Object> DeleteSeenAnimals([FromRoute]int id)
+    // {
+    //   Console.WriteLine($"Delete the seenanimal: {id}");
+
+    //   var db = new SafariVacationContext();
+    //   var seenanimalsToDelete = db.SeenAnimals.FirstOrDefault(seenanimals => seenanimals.Id == id);
+    //   if (seenanimalsToDelete != null)
+    //   {
+    //     db.SeenAnimals.Remove(seenanimalsToDelete);
+    //     db.SaveChanges();
+    //     return seenanimalsToDelete;
+    //   }
+    //   else
+    //   {
+    //     return new { message = "Animal not found" };
+    //   }
+
+    // }
+
+    [HttpDelete("{location}")]
+    public ActionResult<Object> DeleteLocatedAnimals([FromRoute]string location)
     {
-      Console.WriteLine($"Delete the seenanimal: {id}");
+      Console.WriteLine($"Delete the seenanimal: {location}");
 
       var db = new SafariVacationContext();
-      var seenanimalsToDelete = db.SeenAnimals.FirstOrDefault(seenanimals => seenanimals.Id == id);
-      if (seenanimalsToDelete != null)
+      var locatedAnimalsToDelete = db.SeenAnimals.FirstOrDefault(seenanimals => seenanimals.LocationOfLastSeen == location);
+      if (locatedAnimalsToDelete != null)
       {
-        db.SeenAnimals.Remove(seenanimalsToDelete);
+        db.SeenAnimals.Remove(locatedAnimalsToDelete);
         db.SaveChanges();
-        return seenanimalsToDelete;
+        return locatedAnimalsToDelete;
       }
       else
       {
@@ -63,6 +83,7 @@ namespace IntroToAPIs.Controllers
       }
 
     }
+
     [HttpPut("{id}")]
 
     public ActionResult<object> UpdateSeenAnimals([FromRoute]int id, [FromBody]SeenAnimals newInformation)
