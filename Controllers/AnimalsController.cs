@@ -25,16 +25,16 @@ namespace IntroToAPIs.Controllers
       return animals.ToList();
     }
 
-    // [HttpGet]
-    // public ActionResult<IEnumerable<SeenAnimals>> GetAction2()
-    // {
-    //   // query my database
-    //   var db = new SafariVacationContext();
-    //   //SELECT * FROM SeenAnimals
-    //   var animals = db.SeenAnimals.OrderBy(seenanimals => seenanimals.LocationOfLastSeen == "Desert");
-    //   //return the results
-    //   return animals.ToList();
-    // }
+    [HttpGet("{location}")]
+    public ActionResult<IEnumerable<SeenAnimals>> GetAction2([FromRoute]string location)
+    {
+      // query my database
+      var db = new SafariVacationContext();
+      //SELECT * FROM SeenAnimals
+      var animals = db.SeenAnimals.Where(w => w.LocationOfLastSeen.ToLower() == location).OrderBy(seenanimals => seenanimals.LocationOfLastSeen);
+      //return the results
+      return animals.ToList();
+    }
 
     [HttpPost]
     public ActionResult<SeenAnimals> AddAnimals([FromBody] SeenAnimals incomingSeenAnimals)
@@ -60,6 +60,29 @@ namespace IntroToAPIs.Controllers
       else
       {
         return new { message = "Animal not found" };
+      }
+
+    }
+    [HttpPut("{id}")]
+
+    public ActionResult<object> UpdateSeenAnimals([FromRoute]int id, [FromBody]SeenAnimals newInformation)
+    {
+      var db = new SafariVacationContext();
+
+      var seenanimal = db.SeenAnimals.FirstOrDefault(animal => animal.Id == id);
+      if (seenanimal != null)
+      {
+        seenanimal.Species = newInformation.Species;
+        seenanimal.CountOfTimesSeen = newInformation.CountOfTimesSeen;
+        seenanimal.LocationOfLastSeen = newInformation.LocationOfLastSeen;
+
+
+        db.SaveChanges();
+        return Ok(seenanimal);
+      }
+      else
+      {
+        return NotFound();
       }
 
     }
