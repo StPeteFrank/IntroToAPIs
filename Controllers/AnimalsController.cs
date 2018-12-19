@@ -24,6 +24,18 @@ namespace IntroToAPIs.Controllers
       //return the results
       return animals.ToList();
     }
+
+    // [HttpGet]
+    // public ActionResult<IEnumerable<SeenAnimals>> GetAction2()
+    // {
+    //   // query my database
+    //   var db = new SafariVacationContext();
+    //   //SELECT * FROM SeenAnimals
+    //   var animals = db.SeenAnimals.OrderBy(seenanimals => seenanimals.LocationOfLastSeen == "Desert");
+    //   //return the results
+    //   return animals.ToList();
+    // }
+
     [HttpPost]
     public ActionResult<SeenAnimals> AddAnimals([FromBody] SeenAnimals incomingSeenAnimals)
     {
