@@ -70,7 +70,7 @@ namespace IntroToAPIs.Controllers
       Console.WriteLine($"Delete the seenanimal: {location}");
 
       var db = new SafariVacationContext();
-      var locatedAnimalsToDelete = db.SeenAnimals.FirstOrDefault(seenanimals => seenanimals.LocationOfLastSeen == location);
+      var locatedAnimalsToDelete = db.SeenAnimals.FirstOrDefault(seenanimals => seenanimals.LocationOfLastSeen.ToLower() == location);
       if (locatedAnimalsToDelete != null)
       {
         db.SeenAnimals.Remove(locatedAnimalsToDelete);
