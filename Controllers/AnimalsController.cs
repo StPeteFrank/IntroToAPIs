@@ -44,27 +44,27 @@ namespace IntroToAPIs.Controllers
       db.SaveChanges();
       return incomingSeenAnimals;
     }
-    // [HttpDelete("{id}")]
-    // public ActionResult<Object> DeleteSeenAnimals([FromRoute]int id)
-    // {
-    //   Console.WriteLine($"Delete the seenanimal: {id}");
+    [HttpDelete("{id}")]
+    public ActionResult<Object> DeleteSeenAnimals([FromRoute]int id)
+    {
+      Console.WriteLine($"Delete the seenanimal: {id}");
 
-    //   var db = new SafariVacationContext();
-    //   var seenanimalsToDelete = db.SeenAnimals.FirstOrDefault(seenanimals => seenanimals.Id == id);
-    //   if (seenanimalsToDelete != null)
-    //   {
-    //     db.SeenAnimals.Remove(seenanimalsToDelete);
-    //     db.SaveChanges();
-    //     return seenanimalsToDelete;
-    //   }
-    //   else
-    //   {
-    //     return new { message = "Animal not found" };
-    //   }
+      var db = new SafariVacationContext();
+      var seenanimalsToDelete = db.SeenAnimals.FirstOrDefault(seenanimals => seenanimals.Id == id);
+      if (seenanimalsToDelete != null)
+      {
+        db.SeenAnimals.Remove(seenanimalsToDelete);
+        db.SaveChanges();
+        return seenanimalsToDelete;
+      }
+      else
+      {
+        return new { message = "Animal not found" };
+      }
 
-    // }
+    }
 
-    [HttpDelete("{location}")]
+    [HttpDelete("location/{location}")]
     public ActionResult<Object> DeleteLocatedAnimals([FromRoute]string location)
     {
       Console.WriteLine($"Delete the seenanimal: {location}");
