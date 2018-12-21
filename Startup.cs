@@ -44,7 +44,8 @@ namespace IntroToAPIs
       }
 
       app.UseHttpsRedirection();
-      app.UseCors(builder => builder.AllowAnyMethod()
+      app.UseCors(builder => builder
+      .AllowAnyMethod()
       .AllowAnyOrigin()
       .AllowAnyHeader()
       .AllowCredentials());

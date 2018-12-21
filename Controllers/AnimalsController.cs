@@ -25,7 +25,7 @@ namespace IntroToAPIs.Controllers
       return animals.ToList();
     }
 
-    [HttpGet("{location}")]
+    [HttpGet("place/{location}")]
     public ActionResult<IEnumerable<SeenAnimals>> GetAction2([FromRoute]string location)
     {
       // query my database
@@ -36,6 +36,24 @@ namespace IntroToAPIs.Controllers
       return animals.ToList();
     }
 
+    // // GET /api/aniamls/totalcount/lions
+    // [HttpGet("totalcount/{specie}")]
+    // public ActionResult<int> GetActionResults([FromRoute] string species){
+
+    // }
+
+    ////// CountOfTimesSeen 
+    [HttpGet("totalcount")]
+    public ActionResult<int> GetAction3()
+    {
+      // query my database
+      var db = new SafariVacationContext();
+      //SELECT * FROM SeenAnimals
+      var animals = db.SeenAnimals.Sum(seenanimal => seenanimal.CountOfTimesSeen);
+      //return the results
+      return animals;
+    }
+    ///////
     [HttpPost]
     public ActionResult<SeenAnimals> AddAnimals([FromBody] SeenAnimals incomingSeenAnimals)
     {
