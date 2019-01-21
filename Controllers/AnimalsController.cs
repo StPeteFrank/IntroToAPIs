@@ -37,11 +37,11 @@ namespace IntroToAPIs.Controllers
     }
 
     // GET /api/aniamls/totalcount/lions
-    [HttpGet("totalcount/lions/tigers/bears")]
+    [HttpGet("totalcount/lions/tigers/bears/gorillas")]
     public ActionResult<int> GetActionResults4([FromRoute] string species)
     {
       var db = new SafariVacationContext();
-      var totalcounteach = db.SeenAnimals.Where(seenanimal => seenanimal.Species == "Lions" || seenanimal.Species == "Tigers" || seenanimal.Species == "Bears").Sum(seenanimal => seenanimal.CountOfTimesSeen);
+      var totalcounteach = db.SeenAnimals.Where(seenanimal => seenanimal.Species == "Lions" || seenanimal.Species == "Tigers" || seenanimal.Species == "Bears" || seenanimal.Species == "Gorillas").Sum(seenanimal => seenanimal.CountOfTimesSeen);
       return totalcounteach;
     }
 
